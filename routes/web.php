@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,10 @@ Route::get('/', function () {
 
 
 Route::get('/second', [TestController::class, 'show']);
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/', [MainController::class, 'showIndex']) -> name('home');
+Route::get('/', [MainController::class, 'showArray']) -> name('array');
