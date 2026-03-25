@@ -28,3 +28,7 @@ Route::get('/home', function () {
 
 Route::get('/', [MainController::class, 'showIndex']) -> name('home');
 Route::get('/', [MainController::class, 'showArray']) -> name('array');
+Route::get('/array', [MainController::class, 'showArray']);
+Route::get('/array/shuffle', [MainController::class, 'shuffleArray']);
+Route::get('/array/sort', [MainController::class, 'sortArray']);
+Route::get('/array/filter', [MainController::class, 'filterArray']);
